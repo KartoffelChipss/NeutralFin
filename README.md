@@ -4,6 +4,8 @@ NeutralFin is a custom Jellyfin theme inspired by [lscambo13's ElegantFin](https
 
 The preview images also use the [Jellyfin Lucide](https://github.com/KartoffelChipss/Jellyfin-Lucide) theme for more modern icons.
 
+For this theme to look best, we also recommend enabling backdrops in your Jellyfin settings.
+
 ![Movie Pahe Preview](./assets/neutralfin-movie.webp)
 
 ## 📦 Install
