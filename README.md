@@ -9,7 +9,7 @@ NeutralFin is a custom Jellyfin theme inspired by [lscambo13's ElegantFin](https
 You can install this theme by pasting the following code into the custom CSS box:
 
 ```
-https://cdn.jsdelivr.net/gh/KartoffelChipss/NeutralFin@latest/theme/neutralfin-minified.css
+@import url("https://cdn.jsdelivr.net/gh/KartoffelChipss/NeutralFin@latest/theme/neutralfin-minified.css");
 ```
 
 <details>
