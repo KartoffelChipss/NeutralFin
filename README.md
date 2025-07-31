@@ -1,6 +1,8 @@
 # NeutralFin Theme
 
-NeutralFin is a custom Jellyfin theme inspired by [lscambo13's ElegantFin](https://github.com/lscambo13/ElegantFin), featuring a sleek black and grey color scheme for a more neutral and modern look
+NeutralFin is a custom Jellyfin theme inspired by [lscambo13's ElegantFin](https://github.com/lscambo13/ElegantFin), featuring a sleek black and grey color scheme for a more neutral and modern look.
+
+The preview images also use the [Jellyfin Lucide](https://github.com/KartoffelChipss/Jellyfin-Lucide) theme for more modern icons.
 
 ![Movie Pahe Preview](./assets/neutralfin-movie.webp)
 
@@ -8,7 +10,7 @@ NeutralFin is a custom Jellyfin theme inspired by [lscambo13's ElegantFin](https
 
 You can install this theme by pasting the following code into the custom CSS box:
 
-```
+```css
 @import url("https://cdn.jsdelivr.net/gh/KartoffelChipss/NeutralFin@latest/theme/neutralfin-minified.css");
 ```
 
@@ -47,6 +49,13 @@ You can install this theme by pasting the following code into the custom CSS box
     <summary><strong>Home Page Preview</strong></summary>
 
 ![Home Page Preview](./assets/neutralfin-home.webp)
+
+</details>
+
+<details>
+    <summary><strong>Movie List Page Preview</strong></summary>
+
+![Movie List Page Preview](./assets/neutralfin-movies.webp)
 
 </details>
 
