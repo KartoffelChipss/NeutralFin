@@ -75,6 +75,8 @@ NeutralFin is a modified version of the [ElegantFin](https://github.com/lscambo1
 ### Modifications by KartoffelChipss:
 
 -   Applied a neutral black and grey color scheme
+-   Fix media bar plugin container position
+-   Fix media bar buttons consistency
 -   Minor CSS refinements
 
 This project remains under the **GNU GPL-2.0 license**.  
