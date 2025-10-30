@@ -61,13 +61,6 @@ You can install this theme by pasting the following code into the custom CSS box
 
 </details>
 
-<details>
-    <summary><strong>Dashboard Preview</strong></summary>
-
-![Dashboard Preview](./assets/neutralfin-dashboard.webp)
-
-</details>
-
 ## ⚖️ License and Credits
 
 NeutralFin is a modified version of the [ElegantFin](https://github.com/lscambo13/ElegantFin) theme by [lscambo13](https://github.com/lscambo13), originally licensed under the [GNU General Public License v2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
