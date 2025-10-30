@@ -1,6 +1,6 @@
 /*
  * NeutralFin v1.1.0
- * Modified version of ElegantFin Theme v25.08.02
+ * Modified version of ElegantFin Theme v25.10.27
  * Original author: lscambo13
  * Modified by: KartoffelChipss
  * License: GNU GPL-2.0
@@ -14,7 +14,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-    --elegantFinFooterText: 'NeutralFin 1.2.0';
+    --elegantFinFooterText: 'NeutralFin 1.2.0 based on ElegantFin 25.10.27';
 
     /* Base theme colors */
     color-scheme: dark;
@@ -150,6 +150,17 @@
     --backdropPositionY: 50%;
 }
 
+/* Fix media bar buttons  */
+.detailButton.detail-button,
+.detailButton.detail-button:not(.btnPlay) {
+    margin: 0 !important;
+    background: buttonface !important;
+    color: inherit !important;
+}
+.btnPlay.detailButton.play-button {
+    margin-right: 0 !important;
+}
+
 html {
     font-family: 'Inter', serif;
     font-optical-sizing: auto;
@@ -177,7 +188,7 @@ html {
 }
 
 .material-icons {
-    font-family: var(--iconPack) !important;
+    font-family: var(--iconPack);
     font-weight: normal;
     font-style: normal;
     display: inline-block;
