@@ -160,6 +160,12 @@
 .btnPlay.detailButton.play-button {
     margin-right: 0 !important;
 }
+.favorite-button {
+    color: inherit;
+}
+.favorite-button.favorited {
+    color: red;
+}
 
 html {
     font-family: 'Inter', serif;
