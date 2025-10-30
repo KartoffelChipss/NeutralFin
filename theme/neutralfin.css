@@ -150,6 +150,12 @@
     --backdropPositionY: 50%;
 }
 
+/* Fix media bar container position */
+#slides-container {
+    margin-top: calc(var(--appBarHeight) * -1);
+    height: 100%;
+}
+
 /* Fix media bar buttons  */
 .detailButton.detail-button,
 .detailButton.detail-button:not(.btnPlay) {
