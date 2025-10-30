@@ -13,7 +13,7 @@ For this theme to look best, we also recommend enabling backdrops in your Jellyf
 You can install this theme by pasting the following code into the custom CSS box:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/KartoffelChipss/NeutralFin@latest/theme/neutralfin-minified.css");
+@import url('https://cdn.jsdelivr.net/gh/KartoffelChipss/NeutralFin@latest/theme/neutralfin-minified.css');
 ```
 
 <details>

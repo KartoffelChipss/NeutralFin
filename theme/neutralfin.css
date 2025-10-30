@@ -11,10 +11,10 @@
  */
 
 /* Inter Font Family */
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-    --elegantFinFooterText: "NeutralFin 1.1.0";
+    --elegantFinFooterText: 'NeutralFin 1.2.0';
 
     /* Base theme colors */
     color-scheme: dark;
@@ -41,11 +41,7 @@
     --uiAccentColor: rgb(130, 130, 130);
     --btnMiniPlayColor: rgb(41, 154, 93);
     --btnMiniPlayBorderColor: rgb(50, 167, 105);
-    --btnPlayBorderColor: color-mix(
-        in srgb,
-        var(--btnMiniPlayColor),
-        rgb(255, 255, 255) 5%
-    );
+    --btnPlayBorderColor: color-mix(in srgb, var(--btnMiniPlayColor), rgb(255, 255, 255) 5%);
 
     /* Base component colors */
     --btnDeleteColor: rgb(169, 29, 29);
@@ -105,37 +101,12 @@
         55%,
         transparent 90%
     );
-    --headerColorGradientAlt: linear-gradient(
-        180deg,
-        rgba(40, 40, 40, 0.95),
-        70%,
-        transparent
-    );
+    --headerColorGradientAlt: linear-gradient(180deg, rgba(40, 40, 40, 0.95), 70%, transparent);
     --headerBlurMask: linear-gradient(180deg, white 50%, 85%, transparent);
-    --cardFooterGradient: linear-gradient(
-        0deg,
-        rgb(0 0 0 / 90%),
-        40%,
-        transparent
-    );
-    --topOSDGradient: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.8),
-        45%,
-        rgba(0, 0, 0, 0)
-    );
-    --bottomOSDGradient: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.8),
-        45%,
-        rgba(0, 0, 0, 0)
-    );
-    --itemBackdropMask: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.8),
-        75%,
-        transparent
-    );
+    --cardFooterGradient: linear-gradient(0deg, rgb(0 0 0 / 90%), 40%, transparent);
+    --topOSDGradient: linear-gradient(180deg, rgba(0, 0, 0, 0.8), 45%, rgba(0, 0, 0, 0));
+    --bottomOSDGradient: linear-gradient(0deg, rgba(0, 0, 0, 0.8), 45%, rgba(0, 0, 0, 0));
+    --itemBackdropMask: linear-gradient(180deg, rgba(0, 0, 0, 0.8), 75%, transparent);
 
     /* Component sizing and spacing */
     --largerRadius: 1.25em;
@@ -159,25 +130,28 @@
     --shadow: 0.1em 0.1em 0.15em rgba(0, 0, 0, 0.3);
 
     /* Header behavior */
-    --headerBlurLayerVisibility: "";
+    --headerBlurLayerVisibility: '';
     --headerBackground: var(--headerColorGradient);
 
     /* Login page customization */
-    --loginPageBgUrl: url("");
-    --loginPageText: "Sign in to continue";
+    --loginPageBgUrl: url('');
+    --loginPageText: 'Sign in to continue';
 
     /* Overlay and icons */
     --overlayPlayButtonPosition: 2.8em;
-    --iconPack: "Material Icons Round", Material Icons;
+    --iconPack: 'Material Icons Round', Material Icons;
 
     /* Display control */
     --extraCardButtonsVisibility: none;
     --libraryLabelVisibility: none;
-    --cardHoverEffect: "";
+    --cardHoverEffect: '';
+
+    --appBarHeight: 5em;
+    --backdropPositionY: 50%;
 }
 
 html {
-    font-family: "Inter", serif;
+    font-family: 'Inter', serif;
     font-optical-sizing: auto;
     font-weight: 425;
     font-style: normal;
@@ -186,22 +160,24 @@ html {
 
 .layout-mobile {
     --itemColumnGap: 0;
-    --sidePadding: 5%;
+    --headerColorGradient: var(--headerColorGradientAlt);
+    --blurLargest: blur(12px);
+    --headerBlurMask: linear-gradient(180deg, white 60%, 90%, transparent);
 }
 
 /* Material Icons Round */
 /* https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200 */
 @font-face {
-    font-family: "Material Icons Round";
+    font-family: 'Material Icons Round';
     font-style: normal;
     font-weight: 100 700;
     font-display: swap;
     src: url(https://fonts.gstatic.com/s/materialsymbolsrounded/v267/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190Fjzag.woff2)
-        format("woff2");
+        format('woff2');
 }
 
 .material-icons {
-    font-family: var(--iconPack);
+    font-family: var(--iconPack) !important;
     font-weight: normal;
     font-style: normal;
     display: inline-block;
@@ -211,13 +187,13 @@ html {
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-    /* line-height: 1; */
-    /* vertical-align: middle; */
+    line-height: 1;
+    vertical-align: middle;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: "liga";
-    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+    font-feature-settings: 'liga';
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 }
 
 .material-icons.info_outline:before {
@@ -225,14 +201,19 @@ html {
 }
 
 .dashboardFooter {
-    font-family: "Noto Sans", serif;
+    font-family: 'Noto Sans', serif;
     transition: transform 50ms;
 }
 
+#myPreferencesMenuPage > div:after,
 .dashboardFooter::after {
     content: var(--elegantFinFooterText);
     font-size: 0.8em;
-    color: #4e4e60;
+    color: var(--borderColor);
+    display: inline-grid;
+    width: -webkit-fill-available;
+    justify-content: center;
+    font-weight: 600;
 }
 
 ::selection {
@@ -243,24 +224,18 @@ html {
     color: var(--borderColor);
 }
 
-.card {
-    padding: 0.375em;
-    transition: width 0.5s;
+.cardPadder .cardImageIcon {
+    color: var(--selectorBackgroundColorAlpha);
 }
 
+.card:focus .cardBox.visualCardBox,
 .card:focus .cardBox:not(.visualCardBox) .cardScalable {
     border-color: white !important;
 }
 
 .mdl-radio__focus-circle,
-.mdl-radio.show-focus
-    .mdl-radio__button:focus
-    + .mdl-radio__circles
-    .mdl-radio__outer-circle,
-.mdl-radio.show-focus
-    .mdl-radio__button:focus
-    + .mdl-radio__circles
-    .mdl-radio__inner-circle {
+.mdl-radio.show-focus .mdl-radio__button:focus + .mdl-radio__circles .mdl-radio__outer-circle,
+.mdl-radio.show-focus .mdl-radio__button:focus + .mdl-radio__circles .mdl-radio__inner-circle {
     background: var(--uiAccentColor);
     color: var(--uiAccentColor);
 }
@@ -276,12 +251,7 @@ html {
     outline: none !important;
 }
 
-.card.show-animation:focus > .cardBox {
-    -webkit-transform: scale(1.125);
-    transform: scale(1.125);
-}
-
-[dir="ltr"] .itemsContainer > .card > .cardBox {
+[dir='ltr'] .itemsContainer > .card > .cardBox {
     margin-left: auto;
     margin-right: auto;
 }
@@ -303,7 +273,7 @@ html {
 .countIndicator,
 .fullSyncIndicator,
 .mediaSourceIndicator {
-    background: rgb(82, 82, 82);
+    background: rgb(31, 80, 189);
     border: var(--defaultLighterBorder);
 }
 
@@ -355,7 +325,7 @@ html {
     transition: transform 0.375s;
 }
 
-.card.squareCard[data-type="TvChannel"] .cardImageContainer.cardContent {
+.card.squareCard[data-type='TvChannel'] .cardImageContainer.cardContent {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -367,38 +337,38 @@ html {
 }
 
 .cardImageContainer > .cardDefaultText::before {
-    content: "?\A";
+    content: '?\A';
     color: var(--borderColor);
 }
 
-.card.card-hoverable:hover .cardScalable,
-.card.card-hoverable:hover .visualCardBox {
+.card-hoverable:hover .cardScalable,
+.card-hoverable:hover .visualCardBox {
     border-color: white !important;
 }
 
-.card.card-hoverable:hover .visualCardBox .cardScalable {
+.card-hoverable:hover .visualCardBox .cardScalable {
     border-color: var(--darkerBorderColor) !important;
 }
 
-.card.card-hoverable:hover .cardImageContainer {
+.card-hoverable:hover .cardImageContainer {
     transform: scale(1.025);
 }
 
-.card.card-hoverable .itemSelectionPanel {
+.card-hoverable .itemSelectionPanel {
     transition: transform 0.125s;
 }
 
-.card.card-hoverable:hover .cardScalable,
-.card.card-hoverable:hover .itemSelectionPanel {
+.card-hoverable:hover .cardScalable,
+.card-hoverable:hover .itemSelectionPanel {
     transform: scale(1.02);
 }
 
-.card.card-hoverable .cardScalable:active {
+.card-hoverable .cardScalable:active {
     transition: transform 0.075s;
     transform: scale(1);
 }
 
-.cardScalable:has(.cardOverlayButton:hover) > .cardImageContainer {
+.cardScalable:has(.cardOverlayButton-hover:hover) > .cardImageContainer {
     transform: scale(1);
 }
 
@@ -407,7 +377,7 @@ html {
     background: rgba(255, 255, 255, 0.05);
 }
 
-.card.card-hoverable .cardOverlayContainer:after {
+.card-hoverable .cardOverlayContainer:after {
     content: var(--cardHoverEffect);
     transition: 0.5s;
     position: absolute;
@@ -419,7 +389,7 @@ html {
     background: var(--hoverGradientV);
 }
 
-.card.card-hoverable:hover .cardOverlayContainer:after {
+.card-hoverable:hover .cardOverlayContainer:after {
     transform: translateY(50%) translateX(0);
     opacity: 0;
 }
@@ -451,9 +421,7 @@ html {
 
 .cardOverlayContainer > .cardOverlayFab-primary,
 .listItemImageButton,
-.layout-mobile
-    .cardOverlayButton-br:not([data-action="menu"])
-    > .cardOverlayButtonIcon {
+.layout-mobile .cardOverlayButton-br:not([data-action='menu']) > .cardOverlayButtonIcon {
     background-color: var(--btnMiniPlayColor) !important;
     color: white;
     border: var(--defaultLighterBorder);
@@ -468,13 +436,13 @@ html {
     color: white;
 }
 
-.layout-desktop .cardOverlayButton-br button[data-action="menu"],
-.layout-desktop .listItemButton[data-action="menu"] {
+.cardOverlayButton-br .cardOverlayButton-hover[data-action='menu'],
+.layout-desktop .listItemButton[data-action='menu'] {
     display: none;
 }
 
 .layout-desktop .cardOverlayButton-br,
-[dir="ltr"].layout-desktop .cardOverlayButton-br {
+[dir='ltr'].layout-desktop .cardOverlayButton-br {
     bottom: 0.75em;
     right: 0.5em;
     display: var(--extraCardButtonsVisibility);
@@ -492,19 +460,17 @@ html {
 }
 
 .layout-mobile .cardOverlayButton-br,
-[dir="ltr"] .layout-mobile .cardOverlayButton-br {
+[dir='ltr'] .layout-mobile .cardOverlayButton-br {
     bottom: 0.25em;
     right: 0.25em;
 }
 
-.layout-mobile .portraitCard .cardOverlayButton-br:not([data-action="menu"]),
-.layout-mobile .backdropCard .cardOverlayButton-br:not([data-action="menu"]) {
+.layout-mobile .portraitCard .cardOverlayButton-br:not([data-action='menu']),
+.layout-mobile .backdropCard .cardOverlayButton-br:not([data-action='menu']) {
     display: none;
 }
 
-.layout-mobile
-    .cardOverlayButton-br[data-action="menu"]
-    > .cardOverlayButtonIcon {
+.layout-mobile .cardOverlayButton-br[data-action='menu'] > .cardOverlayButtonIcon {
     background-color: transparent !important;
     color: white;
     border: none;
@@ -525,7 +491,7 @@ html {
     font-size: x-small;
 }
 
-.listItem-largeImage[data-type="Episode"] .listViewUserDataButtons {
+.listItem-largeImage[data-type='Episode'] .listViewUserDataButtons {
     flex-direction: column;
     font-size: small;
 }
@@ -538,115 +504,162 @@ html {
     --cardCount: 2;
 }
 
-/* if the window width is equal to or more than (at minimum) 220em then the code in the query will trigger */
-/* 25 posters, 22 thumbs */
-@media (min-width: 220em) {
+/* if the window width is equal to or more than (at minimum) 300em then the code in the query will trigger */
+/* 16 posters, 12 thumbs */
+@media (min-width: 300em) {
     .portraitCard,
     .squareCard {
-        --cardCount: 25;
-    }
-
-    .overflowPortraitCard,
-    .overflowSquareCard {
-        --cardCount: 24;
-    }
-
-    .squareCard:has(.cardFooter) {
-        --cardCount: 22;
-    }
-
-    .backdropCard {
-        --cardCount: 22;
-    }
-
-    .overflowBackdropCard {
-        --cardCount: 21;
-    }
-}
-
-/* if the window width is equal to or less than (at maximum) 220em then the code in the query will trigger */
-/* 21 posters, 18 thumbs */
-@media (max-width: 220em) {
-    .portraitCard,
-    .squareCard {
-        --cardCount: 21;
-    }
-
-    .overflowPortraitCard,
-    .overflowSquareCard {
-        --cardCount: 20;
-    }
-
-    .squareCard:has(.cardFooter) {
-        --cardCount: 18;
-    }
-
-    .backdropCard {
-        --cardCount: 18;
-    }
-
-    .overflowBackdropCard {
-        --cardCount: 17;
-    }
-}
-
-/* if the window width is equal to or less than (at maximum) 200em then the code in the query will trigger */
-/* 17 posters, 14 thumbs */
-@media (max-width: 200em) {
-    .portraitCard,
-    .squareCard {
-        --cardCount: 17;
-    }
-
-    .overflowPortraitCard,
-    .overflowSquareCard {
         --cardCount: 16;
     }
 
+    .overflowPortraitCard,
+    .overflowSquareCard {
+        --cardCount: 15;
+    }
+
     .squareCard:has(.cardFooter) {
-        --cardCount: 14;
+        --cardCount: 12;
     }
 
     .backdropCard {
-        --cardCount: 14;
+        --cardCount: 12;
     }
 
     .overflowBackdropCard {
-        --cardCount: 13;
+        --cardCount: 11;
     }
 }
 
-/* if the window width is equal to or less than (at maximum) 170em then the code in the query will trigger */
+/* if the window width is equal to or less than (at maximum) 300em then the code in the query will trigger */
+/* 15 posters, 11 thumbs */
+@media (max-width: 300em) {
+    .portraitCard,
+    .squareCard {
+        --cardCount: 15;
+    }
+
+    .overflowPortraitCard,
+    .overflowSquareCard {
+        --cardCount: 14;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 11;
+    }
+
+    .backdropCard {
+        --cardCount: 11;
+    }
+
+    .overflowBackdropCard {
+        --cardCount: 10;
+    }
+}
+
 /* 14 posters, 10 thumbs */
+@media (max-width: 270em) {
+    .portraitCard,
+    .squareCard {
+        --cardCount: 14;
+    }
+
+    .overflowPortraitCard,
+    .overflowSquareCard {
+        --cardCount: 13;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 10;
+    }
+
+    .backdropCard {
+        --cardCount: 10;
+    }
+
+    .overflowBackdropCard {
+        --cardCount: 9;
+    }
+}
+
+/* 13 posters, 10 thumbs */
+@media (max-width: 240em) {
+    .portraitCard,
+    .squareCard {
+        --cardCount: 13;
+    }
+
+    .overflowPortraitCard,
+    .overflowSquareCard {
+        --cardCount: 12;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 10;
+    }
+
+    .backdropCard {
+        --cardCount: 10;
+    }
+
+    .overflowBackdropCard {
+        --cardCount: 9;
+    }
+}
+
+/* 12 posters, 9 thumbs, 4K*/
+@media (max-width: 220em) {
+    .portraitCard,
+    .squareCard {
+        --cardCount: 12;
+    }
+
+    .overflowPortraitCard,
+    .overflowSquareCard {
+        --cardCount: 11;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 9;
+    }
+
+    .backdropCard {
+        --cardCount: 9;
+    }
+
+    .overflowBackdropCard {
+        --cardCount: 8;
+    }
+}
+
+/* 11 posters, 9 thumbs */
+@media (max-width: 200em) {
+    .portraitCard,
+    .squareCard {
+        --cardCount: 11;
+    }
+
+    .overflowPortraitCard,
+    .overflowSquareCard {
+        --cardCount: 10;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 9;
+    }
+
+    .backdropCard {
+        --cardCount: 9;
+    }
+
+    .overflowBackdropCard {
+        --cardCount: 8;
+    }
+}
+
+/* 10 posters, 8 thumbs */
 @media (max-width: 170em) {
     .portraitCard,
     .squareCard {
-        --cardCount: 14;
-    }
-
-    .overflowPortraitCard,
-    .overflowSquareCard {
-        --cardCount: 13;
-    }
-
-    .squareCard:has(.cardFooter) {
-        --cardCount: 10;
-    }
-
-    .backdropCard {
-        --cardCount: 10;
-    }
-
-    .overflowBackdropCard {
-        --cardCount: 9;
-    }
-}
-
-/* if the window width is equal to or less than (at maximum) 150em then the code in the query will trigger */
-/* 10 posters, 7 thumbs */
-@media (max-width: 150em) {
-    .portraitCard,
-    .squareCard {
         --cardCount: 10;
     }
 
@@ -656,7 +669,7 @@ html {
     }
 
     .squareCard:has(.cardFooter) {
-        --cardCount: 8;
+        --cardCount: 9;
     }
 
     .backdropCard {
@@ -668,7 +681,32 @@ html {
     }
 }
 
-/* 8 posters, 7 thumbs */
+/* 9 posters, 7 thumbs */
+@media (max-width: 140em) {
+    .portraitCard,
+    .squareCard {
+        --cardCount: 9;
+    }
+
+    .overflowPortraitCard,
+    .overflowSquareCard {
+        --cardCount: 8;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 7;
+    }
+
+    .backdropCard {
+        --cardCount: 7;
+    }
+
+    .overflowBackdropCard {
+        --cardCount: 6;
+    }
+}
+
+/* 8 posters, 7 thumbs, 1080p */
 @media (max-width: 120em) {
     .portraitCard,
     .squareCard {
@@ -678,6 +716,13 @@ html {
     .overflowPortraitCard,
     .overflowSquareCard {
         --cardCount: 7;
+    }
+
+    .layout-tv .portraitCard,
+    .layout-tv .squareCard,
+    .layout-tv .overflowPortraitCard,
+    .layout-tv .overflowSquareCard {
+        --cardCount: 6;
     }
 
     .squareCard:has(.cardFooter) {
@@ -691,6 +736,11 @@ html {
     .overflowBackdropCard {
         --cardCount: 5;
     }
+
+    .layout-tv .backdropCard,
+    .layout-tv .overflowBackdropCard {
+        --cardCount: 4;
+    }
 }
 
 /* 7 posters, 6 thumbs */
@@ -698,9 +748,7 @@ html {
     .portraitCard,
     .squareCard,
     .overflowPortraitCard,
-    .overflowSquareCard,
-    .squareCard:has(.cardFooter),
-    .backdropCard {
+    .overflowSquareCard {
         --cardCount: 7;
     }
 
@@ -732,7 +780,7 @@ html {
 
     .overflowBackdropCard,
     .backdropCard {
-        --cardCount: 5;
+        --cardCount: 4;
     }
 }
 
@@ -797,13 +845,24 @@ html {
     }
 }
 
+.layout-mobile .card {
+    --sidePadding: 5%;
+}
+
 .card {
     --effectiveWidth: calc((99vw - (var(--sidePadding) * 2)));
-    --cardWidth: calc(
-        var(--effectiveWidth) / var(--cardCount) - var(--itemColumnGap)
-    );
-    box-sizing: border-box;
+    --cardWidth: calc(var(--effectiveWidth) / var(--cardCount) - var(--itemColumnGap));
     width: var(--cardWidth) !important;
+    padding: 0.375em;
+    transition: width 0.5s;
+    box-sizing: content-box;
+}
+
+/* this makes the cards bigger and center aligned on older browsers */
+@supports (aspect-ratio: 1 / 1) {
+    .card {
+        box-sizing: border-box;
+    }
 }
 
 .layout-mobile .card {
@@ -825,24 +884,14 @@ html {
 .layout-desktop .detailPageWrapperContainer {
     background: transparent;
     min-height: 46vh;
-    background: linear-gradient(
-        0deg,
-        var(--darkerGradientPointAlpha) 70%,
-        85%,
-        transparent
-    );
+    background: linear-gradient(0deg, var(--darkerGradientPointAlpha) 70%, 85%, transparent);
 }
 
 .layout-tv .detailPageWrapperContainer {
     padding-left: 30vw;
     background: transparent;
     min-height: 46vh;
-    background: linear-gradient(
-        0deg,
-        var(--darkerGradientPointAlpha) 70%,
-        85%,
-        transparent
-    );
+    background: linear-gradient(0deg, var(--darkerGradientPointAlpha) 70%, 85%, transparent);
 }
 
 .detailPagePrimaryContainer {
@@ -852,17 +901,22 @@ html {
     flex-direction: column;
     /* center content on desktop */
     align-items: center;
-    text-align: center;
-    margin-bottom: -1.5em;
+    /* this aligns the plot to left on 10.11.0 */
+    text-align: left;
+    /* temporarily disabled for 10.11.0 */
+    /* margin-bottom: -1.5em; */
 }
 
-.layout-mobile .detailPagePrimaryContainer {
-    padding: 0.5em var(--sidePadding);
+/* this disables block padding on pre-10.11.0 */
+.layout-mobile .detailPagePrimaryContainer.detailRibbon,
+/* this disables block padding on 10.11.0 */
+.layout-mobile .detailPagePrimaryContainer>.detailRibbon {
+    padding: 0 var(--sidePadding);
 }
 
-[dir="ltr"] .detailPagePrimaryContent {
+/* [dir=ltr] .detailPagePrimaryContent {
     padding-right: 0;
-}
+} */
 
 .layout-desktop .detailPagePrimaryContainer {
     background: transparent;
@@ -872,8 +926,32 @@ html {
     background-color: transparent;
 }
 
-.detailPageSecondaryContainer {
+/* this removes the extra large left paading on 10.11.0 */
+.detailPagePrimaryContainer>.detailPagePrimaryContent,
+[dir=ltr] .detailPagePrimaryContainer>.detailRibbon,
+/* this removes the extra large left paading on pre-10.11.0 */
+[dir=ltr] .detailPagePrimaryContainer.detailRibbon {
+    padding-left: var(--sidePadding);
+}
+
+.layout-mobile .detailPagePrimaryContent {
+    padding-left: var(--sidePadding) !important;
+    padding-right: var(--sidePadding) !important;
+}
+
+/* this places main media buttons below the title on 10.11.0 */
+.layout-desktop [dir='ltr'] .detailRibbon,
+.layout-tv [dir='ltr'] .detailRibbon {
+    flex-direction: column;
+}
+
+.detailPagePrimaryContainer > .detailPagePrimaryContent {
     padding-top: 0;
+}
+
+.detailPageSecondaryContainer {
+    /* use !important for pre-10.11.0 compatibility */
+    padding-top: 0 !important;
 }
 
 /* this hides the header home button everywhere except the main media page */
@@ -903,6 +981,7 @@ html {
 
 .verticalSection.emby-scroller-container > h2.sectionTitle.sectionTitle-cards {
     padding-top: 1.25em !important;
+    margin: 0 0 -0.5em 0;
 }
 
 #itemDetailPage .emby-scroller-container,
@@ -910,6 +989,7 @@ html {
 #itemDetailPage .scrollX {
     margin: 0 calc(-1 * var(--sidePadding));
     padding: 0 var(--sidePadding);
+    padding-left: calc(var(--sidePadding) - 0.375em);
 }
 
 .layout-desktop .emby-scroller-container,
@@ -918,7 +998,12 @@ html {
     --itemColumnGap: 0.5em;
 }
 
-.itemsContainer {
+.emby-scroller,
+.hiddenScrollX.scrollX {
+    padding-left: calc(var(--sidePadding) - 0.375em);
+}
+
+.itemsContainer:not(.editorsChoiceItemsContainer) {
     column-gap: var(--itemColumnGap);
 }
 
@@ -929,14 +1014,16 @@ html {
 
 .sectionTitleContainer-cards {
     padding-top: 0;
-}
-
-.sectionTitleContainer + .emby-scrollbuttons {
-    padding-top: 0;
+    margin: 0.75em 0 -0.75em 0;
 }
 
 .layout-mobile :not(.sectionTitleContainer-cards) > .sectionTitle-cards {
     text-align: left;
+    margin: 0.75em 0 -0.75em 0;
+}
+
+.sectionTitleContainer + .emby-scrollbuttons {
+    padding-top: 0;
 }
 
 .emby-scrollbuttons-button.paper-icon-button-light > .material-icons {
@@ -962,7 +1049,7 @@ html {
 .mediaInfoOfficialRating {
     background: transparent !important;
     font-size: 0.75em;
-    font-family: "Noto Sans", sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     line-height: 1.5em;
     transform: translateY(-0.15em);
     font-weight: 600;
@@ -977,24 +1064,25 @@ html {
     transform: translateY(-0.02em);
 }
 
-[dir="ltr"] .mediaInfoCriticRating {
+[dir='ltr'] .mediaInfoCriticRating {
     background-size: 30%;
     padding-left: 1.5em;
 }
 
-[dir="ltr"] .mediaInfoCriticRating::after {
-    content: "%";
+[dir='ltr'] .mediaInfoCriticRating::after {
+    content: '%';
 }
 
 .layout-desktop .detailRibbon {
-    height: 32vh !important;
-    margin-top: unset !important;
+    height: 28vh;
+    margin-top: unset;
 }
 
-.layout-desktop [dir="ltr"] .detailPagePrimaryContainer,
-.layout-tv [dir="ltr"] .detailPagePrimaryContainer {
+/* test disabled for 10.11.0 */
+/* .layout-desktop [dir=ltr] .detailPagePrimaryContainer,
+.layout-tv [dir=ltr] .detailPagePrimaryContainer {
     padding-left: var(--sidePadding);
-}
+} */
 
 @keyframes animMoveDown {
     from {
@@ -1033,27 +1121,14 @@ html {
 }
 
 .detailLogo {
-    /* this hides the detail logo by default to make it only show up on modern browsers */
-    display: none;
-}
-
-@supports (aspect-ratio: 1 / 1) {
-    /* this shows the detail logo on modern browsers */
-
-    .detailLogo {
-        display: block;
-        top: calc(100vh - 10em - var(--primaryItemPageNegativeSpace));
-        left: 0;
-        width: 40%;
-        transform: translateY(-100%);
-        margin: auto 30%;
-        height: 25vh;
-        background-position: bottom;
-    }
-
-    .layout-tv .detailLogo {
-        display: block;
-    }
+    display: block;
+    top: calc(100vh - 11em - var(--primaryItemPageNegativeSpace));
+    left: 0;
+    width: 40%;
+    transform: translateY(-100%);
+    margin: auto 30%;
+    height: 25vh;
+    background-position: bottom;
 }
 
 .layout-mobile .detailLogo {
@@ -1072,6 +1147,24 @@ html {
     display: block !important;
 }
 
+/* Theme video styling rolled back because jellyfin does not differentiate between the main video player and theme video playback nicely*/
+/* .videoPlayerContainer {
+    position: relative !important;
+    -webkit-mask: var(--themeVideoPlayerMask);
+    mask: var(--themeVideoPlayerMask);
+    height: 90vh;
+}
+
+.layout-mobile .videoPlayerContainer {
+    z-index: 1;
+    height: 35vh;
+}
+
+.videoPlayerContainer>.htmlvideoplayer {
+    width: -webkit-fill-available;
+    object-fit: cover;
+} */
+
 .layout-desktop .itemBackdrop {
     height: calc(100vh - 32vh - var(--primaryItemPageNegativeSpace)) !important;
 }
@@ -1082,7 +1175,7 @@ html {
     top: -30%;
     -webkit-mask: var(--itemBackdropMask);
     mask: var(--itemBackdropMask);
-    animation: animMoveDown 1s ease-out forwards;
+    animation: animMoveDown 0.5s ease-out forwards;
     height: 45vh;
 }
 
@@ -1091,6 +1184,7 @@ html {
 }
 
 .layout-tv .detailLogo {
+    display: block;
     height: 20vh;
     top: 39vh;
     left: 30vw;
@@ -1102,25 +1196,37 @@ html {
     height: 33vh;
 }
 
-.detailImageContainer.padded-left {
+/* .detailImageContainer.padded-left {
     padding-left: 0;
-}
+} */
 
-.layout-tv .detailImageContainer.padded-left {
-    padding-left: 0;
-    height: 0;
+/* .layout-tv .detailImageContainer .card {
+    padding-left: var(--sidePadding);
+
     position: fixed;
-}
+} */
 
 .layout-desktop .detailImageContainer .card {
-    top: unset !important;
+    position: absolute !important;
     width: 22vh !important;
+    float: none;
+    left: 0 !important;
+    top: 0;
+    right: 0;
+    margin: auto;
+    margin-bottom: 0;
+    place-self: center;
+    transform: translateY(-80%);
+}
+
+.layout-desktop .detailImageContainer .backdropCard,
+.layout-desktop .detailImageContainer .squareCard {
+    transform: translateY(-100%);
 }
 
 .detailImageContainer .card.backdropCard {
     width: 40vh !important;
     max-width: 50vw;
-    margin-bottom: 1em;
 }
 
 .detailImageContainer .card {
@@ -1128,8 +1234,15 @@ html {
 }
 
 .layout-tv .detailImageContainer .card {
-    width: 23vw !important;
-    display: block !important;
+    width: 25vw !important;
+    display: grid !important;
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: var(--sidePadding);
+    align-content: center;
+    transform: none;
 }
 
 .layout-mobile .detailImageContainer .card {
@@ -1138,7 +1251,7 @@ html {
 }
 
 /* this brings the buttons and title to the center in main media page */
-.layout-mobile [dir="ltr"] .infoWrapper,
+.layout-mobile [dir='ltr'] .infoWrapper,
 .layout-mobile .infoWrapper {
     padding-left: 0;
 }
@@ -1147,6 +1260,8 @@ html {
     align-content: end;
     place-items: center;
     display: grid;
+    /* this centers the title and other text on 10.11.0 */
+    text-align: center;
 }
 
 /* Both the blocks below position the poster in main media page in the center */
@@ -1196,13 +1311,11 @@ html {
     max-width: 20vh;
 }
 
-.detailImageContainer
-    .card.backdropCard:has(.cardImageIcon.album)
-    .cardScalable {
+.detailImageContainer .card.backdropCard:has(.cardImageIcon.album) .cardScalable {
     aspect-ratio: 1 / 1;
 }
 
-#childrenContent:has(.listItem[data-type="Audio"]) {
+#childrenContent:has(.listItem[data-type='Audio']) {
     border: var(--defaultBorder);
     border-radius: var(--largeRadius);
     padding: 0.5em;
@@ -1212,6 +1325,7 @@ html {
 /* this shows the poster in the cast, book and music pages */
 .detailImageContainer .card:has(.book, .person, .album),
 .detailImageContainer .card.backdropCard:has(.tv),
+.detailImageContainer .card.backdropCard:has(.movie),
 .detailImageContainer .card.backdropCard:has(.live_tv) {
     display: block;
 }
@@ -1223,32 +1337,20 @@ html {
     )
     .itemBackdrop,
 #itemDetailPage:has(.detailImageContainer .cardImageIcon.album) .itemBackdrop,
-#itemDetailPage:has(.detailImageContainer .backdropCard .cardImageIcon.tv)
-    .itemBackdrop,
+#itemDetailPage:has(.detailImageContainer .backdropCard .cardImageIcon.tv) .itemBackdrop,
 #itemDetailPage:has(.detailImageContainer .squareCard) .itemBackdrop,
-#itemDetailPage:has(.detailImageContainer .cardImageIcon.live_tv)
-    .itemBackdrop {
-    height: calc(
-        100vh - 32vh - var(--secondaryItemPageNegativeSpace)
-    ) !important;
+#itemDetailPage:has(.detailImageContainer .cardImageIcon.live_tv) .itemBackdrop {
+    height: calc(100vh - 32vh - var(--secondaryItemPageNegativeSpace)) !important;
 }
 
 #itemDetailPage:has(.detailImageContainer .card.backdropCard),
 #itemDetailPage:has(.detailImageContainer .card .cardImageIcon.album) {
-    background: linear-gradient(
-        180deg,
-        var(--darkerGradientPointAlpha) 80%,
-        transparent
-    );
+    background: linear-gradient(180deg, var(--darkerGradientPointAlpha) 80%, transparent);
 }
 
-.layout-mobile
-    #itemDetailPage:has(.detailImageContainer .card.backdropCard)
-    .itemBackdrop,
-.layout-mobile
-    #itemDetailPage:has(.detailImageContainer .card .cardImageIcon.album)
-    .itemBackdrop {
-    animation: animMoveDownSecondaryPage 1s ease-out forwards;
+.layout-mobile #itemDetailPage:has(.detailImageContainer .card.backdropCard) .itemBackdrop,
+.layout-mobile #itemDetailPage:has(.detailImageContainer .card .cardImageIcon.album) .itemBackdrop {
+    animation: animMoveDownSecondaryPage 0.5s ease-out forwards;
 }
 
 .layout-mobile .cardImageIcon {
@@ -1267,8 +1369,8 @@ html {
 }
 
 @media (orientation: portrait) and (max-width: 40em) {
-    [data-type="Movie"] .listItemImage,
-    [data-type="Series"] .listItemImage {
+    [data-type='Movie'] .listItemImage,
+    [data-type='Series'] .listItemImage {
         display: unset;
     }
 
@@ -1316,9 +1418,13 @@ html,
     background: var(--backgroundGradient);
 }
 
+.backdropImage {
+    background-position-y: var(--backdropPositionY);
+}
+
 .backdropImage:after,
 .backdropImage:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     bottom: 0;
@@ -1345,12 +1451,11 @@ html,
 
 .backgroundContainer.withBackdrop {
     opacity: 0.9;
-    background: linear-gradient(
-        0deg,
-        var(--darkerGradientPoint),
-        45%,
-        rgba(17, 24, 39, 0.25)
-    );
+    background: linear-gradient(0deg, var(--darkerGradientPoint), 45%, rgba(17, 24, 39, 0.25));
+}
+
+.layout-tv .backgroundContainer.withBackdrop {
+    background: linear-gradient(0deg, var(--darkerGradientPoint), 45%, rgba(17, 24, 39, 0.95));
 }
 
 .layout-mobile .withSectionTabs .backgroundContainer.withBackdrop {
@@ -1376,21 +1481,19 @@ html,
 
 @keyframes animScaleUp {
     from {
-        transform: scale(1) translateY(-2.5%);
+        transform: translateY(-2.5%);
         opacity: 0;
-        filter: var(--blurLarge);
     }
 
     to {
-        transform: scale(1) translateY(0%);
+        transform: translateY(0%);
         opacity: 1;
-        filter: blur(0);
     }
 }
 
 .backdropImageFadeIn {
     transform-origin: bottom center;
-    animation: animScaleUp 1s ease-out forwards;
+    animation: animScaleUp 0.5s ease-out forwards;
 }
 
 .appfooter {
@@ -1441,9 +1544,7 @@ html,
     margin-bottom: 5%;
 }
 
-.itemProgressBar:not(.backgroundProgress):not(.playbackProgress):not(
-        .transcodingProgress
-    ) {
+.itemProgressBar:not(.backgroundProgress):not(.playbackProgress):not(.transcodingProgress) {
     backdrop-filter: var(--blurLarge);
     background-color: var(--osdSeekBarBufferedColorAlpha) !important;
     height: 0.35em;
@@ -1451,29 +1552,16 @@ html,
     border-radius: var(--largeRadius);
 }
 
-.layout-mobile
-    .itemProgressBar:not(
-        .backgroundProgress,
-        .playbackProgress,
-        .transcodingProgress
-    ) {
+.layout-mobile .itemProgressBar:not(.backgroundProgress, .playbackProgress, .transcodingProgress) {
     width: calc(100% - 2em);
 }
 
 .layout-mobile
     .backdropCard
-    .itemProgressBar:not(
-        .backgroundProgress,
-        .playbackProgress,
-        .transcodingProgress
-    ),
+    .itemProgressBar:not(.backgroundProgress, .playbackProgress, .transcodingProgress),
 .layout-mobile
     .portraitCard
-    .itemProgressBar:not(
-        .backgroundProgress,
-        .playbackProgress,
-        .transcodingProgress
-    ) {
+    .itemProgressBar:not(.backgroundProgress, .playbackProgress, .transcodingProgress) {
     width: 100%;
     width: -webkit-fill-available;
 }
@@ -1666,26 +1754,10 @@ progress + span {
     outline: none;
     overflow: hidden;
     margin-top: 1em;
-    border: var(--defaultBorder);
     border-radius: var(--smallRadius);
     background-color: var(--lighterGradientPointAlpha);
-}
-
-@supports (display: revert) {
-    .itemDetailsGroup {
-        outline: var(--defaultBorder);
-        outline-offset: calc(-1 * var(--borderWidth));
-        border: none;
-    }
-
-    /* this somehow fixes border overflow on mobile */
-    .layout-mobile .itemDetailsGroup {
-        outline-offset: calc(-1 * var(--borderWidthDouble));
-    }
-}
-
-.itemDetailsGroup > div:not(:last-child) {
-    border-bottom: var(--defaultBorder);
+    border: none;
+    box-shadow: inset 0 0 0 0.06em var(--borderColor) !important;
 }
 
 .detailsGroupItem {
@@ -1693,6 +1765,10 @@ progress + span {
     justify-content: space-between;
     padding: 0.5em 0.9em;
     align-items: baseline;
+}
+
+.detailsGroupItem:not(:last-child) {
+    border-bottom: var(--defaultBorder);
 }
 
 .detailsGroupItem > .label {
@@ -1730,9 +1806,7 @@ progress + span {
     margin-bottom: 0.5em;
 }
 
-.layout-mobile
-    .itemExternalLinks.focuscontainer-x
-    > .button-link:hover:not(:active) {
+.layout-mobile .itemExternalLinks.focuscontainer-x > .button-link:hover:not(:active) {
     color: var(--textColor) !important;
 }
 
@@ -1742,46 +1816,38 @@ progress + span {
     color: white !important;
 }
 
-.layout-desktop
-    .itemExternalLinks.focuscontainer-x
-    > a[href*="themoviedb.org"]:hover,
-.itemExternalLinks.focuscontainer-x > a[href*="themoviedb.org"]:active {
+.layout-desktop .itemExternalLinks.focuscontainer-x > a[href*='themoviedb.org']:hover,
+.itemExternalLinks.focuscontainer-x > a[href*='themoviedb.org']:active {
     background-color: rgb(26, 183, 216) !important;
     color: black !important;
 }
 
-.layout-desktop .itemExternalLinks.focuscontainer-x > a[href*="imdb.com"]:hover,
-.itemExternalLinks.focuscontainer-x > a[href*="imdb.com"]:active {
+.layout-desktop .itemExternalLinks.focuscontainer-x > a[href*='imdb.com']:hover,
+.itemExternalLinks.focuscontainer-x > a[href*='imdb.com']:active {
     background-color: rgb(226, 182, 22) !important;
     color: black !important;
 }
 
-.layout-desktop
-    .itemExternalLinks.focuscontainer-x
-    > a[href*="thetvdb.com"]:hover,
-.itemExternalLinks.focuscontainer-x > a[href*="thetvdb.com"]:active {
+.layout-desktop .itemExternalLinks.focuscontainer-x > a[href*='thetvdb.com']:hover,
+.itemExternalLinks.focuscontainer-x > a[href*='thetvdb.com']:active {
     background-color: rgb(108, 213, 145) !important;
     color: black !important;
 }
 
-.layout-desktop .itemExternalLinks.focuscontainer-x > a[href*="trakt.tv"]:hover,
-.itemExternalLinks.focuscontainer-x > a[href*="trakt.tv"]:active {
+.layout-desktop .itemExternalLinks.focuscontainer-x > a[href*='trakt.tv']:hover,
+.itemExternalLinks.focuscontainer-x > a[href*='trakt.tv']:active {
     background-color: rgb(171, 58, 173) !important;
     color: var(--textColor) !important;
 }
 
-.layout-desktop
-    .itemExternalLinks.focuscontainer-x
-    > a[href*="theaudiodb.com"]:hover,
-.itemExternalLinks.focuscontainer-x > a[href*="theaudiodb.com"]:active {
+.layout-desktop .itemExternalLinks.focuscontainer-x > a[href*='theaudiodb.com']:hover,
+.itemExternalLinks.focuscontainer-x > a[href*='theaudiodb.com']:active {
     background-color: rgb(99, 153, 204) !important;
     color: rgb(15, 22, 28) !important;
 }
 
-.layout-desktop
-    .itemExternalLinks.focuscontainer-x
-    > a[href*="musicbrainz.org"]:hover,
-.itemExternalLinks.focuscontainer-x > a[href*="musicbrainz.org"]:active {
+.layout-desktop .itemExternalLinks.focuscontainer-x > a[href*='musicbrainz.org']:hover,
+.itemExternalLinks.focuscontainer-x > a[href*='musicbrainz.org']:active {
     background-color: rgb(186, 71, 143) !important;
     color: var(--textColor) !important;
 }
@@ -1798,7 +1864,6 @@ progress + span {
     color: var(--dimTextColor);
     margin-top: 0;
     margin-bottom: 0;
-    -webkit-line-clamp: 2;
 }
 
 .detail-clamp-text p {
@@ -1806,8 +1871,17 @@ progress + span {
     margin-bottom: 0.25em;
 }
 
+.layout-desktop .detail-clamp-text {
+    -webkit-line-clamp: 2;
+}
+
 .layout-mobile .detail-clamp-text {
     -webkit-line-clamp: 4;
+}
+
+.layout-tv .detail-clamp-text {
+    -webkit-line-clamp: 10;
+    transition: none;
 }
 
 .overview-expand.emby-button {
@@ -1818,8 +1892,8 @@ progress + span {
 }
 
 .overview-expand.emby-button:after {
-    content: "\e313";
-    font-family: "Material Icons";
+    content: '\e313';
+    font-family: 'Material Icons';
     background: var(--selectorBackgroundColor);
     border-radius: 50%;
     width: 1.5em;
@@ -1893,7 +1967,7 @@ progress + span {
     min-width: 11em;
 }
 
-[dir="ltr"] .emby-collapsible-button {
+[dir='ltr'] .emby-collapsible-button {
     padding-left: 1em;
 }
 
@@ -1909,12 +1983,10 @@ progress + span {
         border: unset;
     }
 
-    body:has(
-            .dialog.dialog-fixedSize.opened,
-            .dialog.dialog-fullscreen-lowres.opened
-        ) {
+    /* body:has(.dialog.dialog-fixedSize.opened,
+        .dialog.dialog-fullscreen-lowres.opened) {
         overflow: hidden;
-    }
+    } */
 }
 
 .dialogBackdropOpened {
@@ -1934,8 +2006,7 @@ progress + span {
     padding: 0 0.5em !important;
 }
 
-.formDialogFooter:not(.formDialogFooter-clear.formDialogFooter-flex)
-    > .formDialogFooterItem {
+.formDialogFooter:not(.formDialogFooter-clear.formDialogFooter-flex) > .formDialogFooterItem {
     -webkit-flex-basis: 6em;
     flex-basis: 6em;
 }
@@ -1993,17 +2064,11 @@ progress + span {
     height: calc(100% - 1.75em);
 }
 
-.overflowBackdropCard
-    .cardText-first
-    + .itemSelectionPanel
-    > .checkboxContainer {
+.overflowBackdropCard .cardText-first + .itemSelectionPanel > .checkboxContainer {
     height: calc(100% - 0em);
 }
 
-.checkboxContainer
-    .emby-checkbox:checked
-    + span
-    + .checkboxOutline.multiSelectCheckboxOutline {
+.checkboxContainer .emby-checkbox:checked + span + .checkboxOutline.multiSelectCheckboxOutline {
     border-radius: var(--largeRadius) !important;
 }
 
@@ -2059,9 +2124,7 @@ progress + span {
     transition: all 0.125s;
 }
 
-.emby-checkbox:checked
-    + span
-    + .checkboxOutline:not(.multiSelectCheckboxOutline) {
+.emby-checkbox:checked + span + .checkboxOutline:not(.multiSelectCheckboxOutline) {
     box-shadow: none;
     background: var(--checkboxCheckedBgColor);
     border: var(--defaultLighterBorder);
@@ -2099,7 +2162,7 @@ progress + span {
     top: 0.5em;
 }
 
-[dir="ltr"] .cardIndicators {
+[dir='ltr'] .cardIndicators {
     right: 0.5em;
 }
 
@@ -2144,17 +2207,17 @@ progress + span {
     background: var(--cardBackgroundGradient);
 }
 
-div[data-type="Book"] .play_arrow:before {
-    content: "\f1c6";
+div[data-type='Book'] .play_arrow:before {
+    content: '\f1c6';
     font-size: 85%;
 }
 
-div[data-type="Photo"] .play_arrow:before {
-    content: "\e5d0";
+div[data-type='Photo'] .play_arrow:before {
+    content: '\e5d0';
 }
 
-div[data-type="PhotoAlbum"] .play_arrow:before {
-    content: "\e8eb";
+div[data-type='PhotoAlbum'] .play_arrow:before {
+    content: '\e8eb';
 }
 
 .emby-button.block,
@@ -2208,16 +2271,16 @@ div[data-type="PhotoAlbum"] .play_arrow:before {
 }
 
 .detailButton-icon {
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 }
 
 .cardScalable .material-icons.check:before {
-    font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 20;
+    font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 20;
     transform: scale(1.25);
 }
 
-.emby-button[title="Favorite"] .material-icons.favorite:before {
-    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 20;
+.emby-button[title='Favorite'] .material-icons.favorite:before {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
 }
 
 .detailButton:not(.btnPlay) {
@@ -2246,8 +2309,19 @@ div[data-type="PhotoAlbum"] .play_arrow:before {
     border-radius: 3em;
     border-color: var(--borderColor);
     height: 3em;
-    width: 10em;
+    min-width: 10em;
     margin-right: 0.5em !important;
+    flex-direction: row;
+}
+
+.btnPlay:after {
+    content: attr(title);
+    padding: 0 1ch;
+}
+
+.btnPlay > .detailButton-content::after {
+    padding: 0 1ch;
+    place-content: center;
 }
 
 .btnPlay > .detailButton-content {
@@ -2262,38 +2336,21 @@ div[data-type="PhotoAlbum"] .play_arrow:before {
     justify-content: flex-start;
 }
 
-.mainDetailButtons:has(.detailButton[data-type="Book"])
-    .btnPlay[title="Play"]
-    > .detailButton-content::after {
-    content: "Read";
+.mainDetailButtons:has(.detailButton[data-type='Book']) .btnPlay[title='Play']:after {
+    content: 'Read';
 }
 
-.mainDetailButtons:has(.detailButton[data-type="Book"])
-    .btnPlay
-    .material-icons.play_arrow:before {
-    content: "\f1c6";
+.mainDetailButtons:has(.detailButton[data-type='Book']) .btnPlay .material-icons.play_arrow:before {
+    content: '\f1c6';
     padding-inline-end: 1ch;
-}
-
-.btnPlay[title="Play"] > .detailButton-content::after {
-    content: "Play";
-}
-
-.btnPlay[title="Resume"] > .detailButton-content::after {
-    content: "Resume";
-}
-
-.btnPlay > .detailButton-content::after {
-    padding: 0 1ch;
-    place-content: center;
 }
 
 .mainDetailButtons {
     justify-content: center;
-    margin: 0 0 1em 0;
+    margin: 0;
 }
 
-.layout-mobile [dir="ltr"] .mainDetailButtons {
+.layout-mobile [dir='ltr'] .mainDetailButtons {
     flex-wrap: wrap;
     padding: 0 1.25em;
 }
@@ -2301,7 +2358,7 @@ div[data-type="PhotoAlbum"] .play_arrow:before {
 @media (min-width: 100em) {
     .mainDetailButtons {
         font-size: unset;
-        margin: 0 0 1em 0;
+        margin: 0;
     }
 }
 
@@ -2311,7 +2368,7 @@ div[data-type="PhotoAlbum"] .play_arrow:before {
     padding: 0.8em 0.8em;
 }
 
-div[data-role="controlgroup"] a.ui-btn-active {
+div[data-role='controlgroup'] a.ui-btn-active {
     background: var(--selectorBackgroundColor) !important;
     color: #fff !important;
 }
@@ -2400,7 +2457,7 @@ div[data-role="controlgroup"] a.ui-btn-active {
     border: var(--defaultBorder);
 }
 
-[dir="ltr"]
+[dir='ltr']
     .listItem:not(
         .actionSheetMenuItem,
         .childrenItemsContainer .listItem,
@@ -2409,7 +2466,7 @@ div[data-role="controlgroup"] a.ui-btn-active {
     padding: 0.375em !important;
 }
 
-[dir="ltr"]
+[dir='ltr']
     .listItem:not(
         .actionSheetMenuItem,
         .childrenItemsContainer .listItem,
@@ -2418,28 +2475,27 @@ div[data-role="controlgroup"] a.ui-btn-active {
     margin-bottom: 0.5em;
 }
 
-[dir="ltr"] .listItem:not(.actionSheetMenuItem)[data-type="Episode"] {
+[dir='ltr'] .listItem:not(.actionSheetMenuItem)[data-type='Episode'] {
     padding: 0.375em;
     margin-bottom: 0.5em;
 }
 
-.layout-mobile #songsTab .listItem[data-type="Audio"],
-.layout-mobile #playlist .listItem[data-type="Audio"] {
+.layout-mobile #songsTab .listItem[data-type='Audio'],
+.layout-mobile #playlist .listItem[data-type='Audio'] {
     margin: auto 1em;
 }
 
-.listItem[data-type="Audio"]:has(.playlistIndexIndicatorImage)
-    .listItemBodyText {
+.listItem[data-type='Audio']:has(.playlistIndexIndicatorImage) .listItemBodyText {
     color: white;
     font-weight: 600;
 }
 
-.listItem[data-type="Audio"]:has(.playlistIndexIndicatorImage):not(:hover) {
+.listItem[data-type='Audio']:has(.playlistIndexIndicatorImage):not(:hover) {
     background-color: rgba(255, 255, 255, 0.07);
 }
 
-[dir="ltr"]
-    .listItem:not(.actionSheetMenuItem)[data-type="Episode"]
+[dir='ltr']
+    .listItem:not(.actionSheetMenuItem)[data-type='Episode']
     .listItemBodyText:not(.secondary) {
     font-size: 1.17em;
     font-weight: 600;
@@ -2461,10 +2517,7 @@ div[data-role="controlgroup"] a.ui-btn-active {
 }
 
 .listItem-bottomoverview,
-[dir="ltr"]
-    .listItem:not(.actionSheetMenuItem)[data-type="Episode"]
-    .listItem-overview
-    p {
+[dir='ltr'] .listItem:not(.actionSheetMenuItem)[data-type='Episode'] .listItem-overview p {
     margin-top: 0.75em;
     margin-bottom: 0em;
 }
@@ -2526,7 +2579,7 @@ div[data-role="controlgroup"] a.ui-btn-active {
     font-size: unset;
 }
 
-[dir="ltr"] .actionsheetMenuItemIcon.check {
+[dir='ltr'] .actionsheetMenuItemIcon.check {
     margin: 0 0.45em 0 0.45em !important;
 }
 
@@ -2542,11 +2595,11 @@ div[data-role="controlgroup"] a.ui-btn-active {
     display: none;
 }
 
-.actionSheetMenuItem:has(.listItemIcon.check[style*="hidden"]) {
+.actionSheetMenuItem:has(.listItemIcon.check[style*='hidden']) {
     background-color: transparent;
 }
 
-.actionSheetMenuItem:has(.listItemIcon.check[style*="hidden"]):active {
+.actionSheetMenuItem:has(.listItemIcon.check[style*='hidden']):active {
     background-color: rgba(255, 255, 255, 0.125);
 }
 
@@ -2555,7 +2608,7 @@ div[data-role="controlgroup"] a.ui-btn-active {
     margin: 0em 1em !important;
 }
 
-[dir="ltr"] .navMenuOption {
+[dir='ltr'] .navMenuOption {
     padding: 0.75em 1em !important;
     margin-bottom: unset;
 }
@@ -2574,7 +2627,7 @@ div[data-role="controlgroup"] a.ui-btn-active {
     row-gap: 1em;
     column-gap: 3em;
     max-width: unset !important;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .layout-mobile .detailSection {
@@ -2585,10 +2638,6 @@ div[data-role="controlgroup"] a.ui-btn-active {
     gap: 1em;
 }
 
-.detailImageContainer .card {
-    position: inherit !important;
-}
-
 .trackSelections {
     order: 3;
     max-width: unset !important;
@@ -2596,8 +2645,12 @@ div[data-role="controlgroup"] a.ui-btn-active {
     border: var(--defaultBorder);
     border-radius: var(--smallRadius);
     padding: 1em;
-    grid-column: 2;
+    grid-column: 3 / 5;
     background-color: var(--lighterGradientPointAlpha);
+}
+
+.layout-tv .trackSelections {
+    order: 2;
 }
 
 .recordingFields {
@@ -2658,19 +2711,41 @@ div[data-role="controlgroup"] a.ui-btn-active {
 
 .itemDetailsGroup {
     order: 2;
-    grid-column: 1;
+    grid-column: 1 / 3;
+}
+
+.layout-tv .itemDetailsGroup {
+    order: 2;
 }
 
 .trackSelections.hide ~ .recordingFields.hide ~ .itemDetailsGroup {
     grid-column: 1 / -1;
 }
 
+.detailSection > .nextUpSection {
+    order: 5;
+    grid-column: 1;
+}
+
+.detailSection > #listChildrenCollapsible {
+    order: 6;
+    grid-column: 2 / -1;
+}
+
+.nextUpSection.hide ~ #listChildrenCollapsible {
+    grid-column: 1 / -1;
+}
+
 .layout-mobile .trackSelections,
 .layout-mobile .detailSectionContent,
 .layout-mobile .itemDetailsGroup,
+.layout-mobile .nextUpSection,
+.layout-mobile .detailSection > #listChildrenCollapsible,
 .layout-tv .trackSelections,
 .layout-tv .detailSectionContent,
-.layout-tv .itemDetailsGroup {
+.layout-tv .itemDetailsGroup,
+.layout-tv .nextUpSection,
+.layout-tv .detailSection > #listChildrenCollapsible {
     grid-column: 1 / -1;
 }
 
@@ -2717,18 +2792,25 @@ div[data-role="controlgroup"] a.ui-btn-active {
 }
 
 .layout-mobile .padded-right-withalphapicker {
-    padding-left: 3.5%;
+    padding-left: 4.5%;
     padding-right: 6.5%;
 }
 
-.detailPagePrimaryContent.padded-right {
+/* test disabled for 10.11.0 */
+/* .detailPagePrimaryContent.padded-right {
     padding-right: 0 !important;
-}
+} */
 
-[dir="ltr"] .detailPageContent,
+[dir='ltr'] .detailPageContent,
 .content-primary {
     padding-left: var(--sidePadding) !important;
     padding-right: var(--sidePadding) !important;
+}
+
+/* this prevents double padding on Jellyfin pre-10.11.0 */
+[dir='ltr'] .detailPageContent > .detailPagePrimaryContent {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 /* this removes right padding from cast page sections to place cards evenly*/
@@ -2820,7 +2902,7 @@ div[data-role="controlgroup"] a.ui-btn-active {
     color: var(--textColor);
 }
 
-[dir="ltr"] .upNextContainer {
+[dir='ltr'] .upNextContainer {
     margin: 2em;
     box-sizing: border-box;
     max-width: 80vw;
@@ -2832,7 +2914,7 @@ div[data-role="controlgroup"] a.ui-btn-active {
 }
 
 .upNextDialog-title {
-    white-space: wrap;
+    white-space: pre-wrap;
     width: unset;
 }
 
@@ -2845,9 +2927,20 @@ div[data-role="controlgroup"] a.ui-btn-active {
     color: white;
 }
 
+.skip-button-container {
+    bottom: 25%;
+}
+
 .skip-button {
     background-color: whitesmoke;
     box-shadow: var(--shadow);
+    margin-right: var(--sidePadding);
+}
+
+/* this allows the skip button get focused correctly on TVs using remote navigation; needs 10.10.7*/
+.layout-tv .skip-button {
+    margin-right: auto;
+    margin-left: var(--sidePadding);
 }
 
 .skip-button:hover {
@@ -2881,7 +2974,7 @@ div[data-role="controlgroup"] a.ui-btn-active {
     }
 
     .actionSheetMenuItem.emby-button:has(
-            .listItemIcon.material-icons.check[style*="hidden"]
+            .listItemIcon.material-icons.check[style*='hidden']
         ):hover {
         background-color: rgba(255, 255, 255, 0.125);
     }
@@ -2946,7 +3039,12 @@ div[data-role="controlgroup"] a.ui-btn-active {
 }
 
 .emby-textarea {
-    font-family: consolas;
+    font-family: consolas, monaco, monospace;
+}
+
+.customCssContainer textarea {
+    max-height: 40vh;
+    overflow-y: auto !important;
 }
 
 .emby-select-withcolor,
@@ -3237,10 +3335,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child {
     display: none;
 }
 
-#loginPage
-    .padded-left.padded-right.padded-bottom-page:has(
-        .visualLoginForm:not(.hide)
-    ) {
+#loginPage .padded-left.padded-right.padded-bottom-page:has(.visualLoginForm:not(.hide)) {
     width: 40em;
 }
 
@@ -3320,16 +3415,12 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child {
     background: var(--activeColor);
 }
 
-#homeTab
-    .overflowBackdropCard[data-isfolder="true"]
-    .cardPadder-overflowBackdrop {
+#homeTab .overflowBackdropCard[data-isfolder='true'] .cardPadder-overflowBackdrop {
     padding-bottom: 50%;
 }
 
-#homeTab .overflowBackdropCard[data-isfolder="true"] .cardText-first,
-#homeTab
-    .overflowBackdropCard[data-isfolder="true"]
-    .cardText.cardTextCentered {
+#homeTab .overflowBackdropCard[data-isfolder='true'] .cardText-first,
+#homeTab .overflowBackdropCard[data-isfolder='true'] .cardText.cardTextCentered {
     display: var(--libraryLabelVisibility);
 }
 
@@ -3457,7 +3548,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child {
     font-weight: 600;
     list-style-type: circle;
     margin-bottom: 0.5em;
-    font-family: "Math", serif;
+    font-family: 'Math', serif;
 }
 
 .MuiTabs-indicator {
@@ -3504,35 +3595,26 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child {
     transition: transform 0.5s;
 }
 
-/* this is the default header, visible in home and libraries */
-.skinHeader-blurred:not(.osdHeader) {
-    backdrop-filter: none;
-    background-color: transparent;
-    border: none;
+/* this is the default solid header, visible in home and libraries */
+.skinHeader-blurred:not(.osdHeader):not(.semiTransparent) {
+    backdrop-filter: var(--blurLarge);
+    background: var(--headerColor);
+    border: var(--defaultBorder);
     border-width: 0 0 var(--borderWidth) 0;
-    background: var(--headerBackground);
-    padding-top: 0.75em;
 }
 
-.layout-mobile .skinHeader-blurred:not(.osdHeader) {
-    padding-top: 0.25em;
-}
-
+.layout-mobile .skinHeader-blurred:not(.osdHeader),
 .layout-mobile .withSectionTabs .headerTop {
-    padding-bottom: 1.45em;
+    padding: 0;
 }
 
-.skinHeader-blurred:not(.osdHeader):not(.semiTransparent)::after {
-    content: var(--headerBlurLayerVisibility);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    backdrop-filter: var(--blurLargest);
-    -webkit-mask: var(--headerBlurMask);
-    mask: var(--headerBlurMask);
-    z-index: -1;
+.headerTabs.sectionTabs {
+    display: grid;
+    height: var(--appBarHeight);
+}
+
+.layout-mobile .headerTabs.sectionTabs {
+    align-content: center;
 }
 
 /* this is the transparent header, visible in main media page */
@@ -3543,22 +3625,8 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child {
     border: none;
 }
 
-/* this is the semi transparent header without, visible when backdrops setting is on */
-/* .backgroundContainer.withBackdrop~div .skinHeader-blurred:not(.osdHeader):not(.semiTransparent),
-.backgroundContainer.withBackdrop~div .skinHeader-blurred:not(.semiTransparent)::after,
-.backgroundContainer.withBackdrop~div .skinHeader-blurred:not(.osdHeader)::after {
-    --headerBackground: var(--headerColorGradientAlt);
-    backdrop-filter: none;
-    background-color: transparent;
-    border: none;
-} */
-
-.skinHeader.headroom:not(.osdHeader, .noHomeButtonHeader):has(
-        .pageTitle:empty
-    )::after,
-.skinHeader.headroom:not(.osdHeader, .noHomeButtonHeader):has(
-        .pageTitle:empty
-    ) {
+.skinHeader.headroom:not(.osdHeader, .noHomeButtonHeader):has(.pageTitle:empty)::after,
+.skinHeader.headroom:not(.osdHeader, .noHomeButtonHeader):has(.pageTitle:empty) {
     --headerBackground: none;
     backdrop-filter: none;
     background-color: transparent;
@@ -3566,41 +3634,50 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child {
 }
 
 .skinHeader-withBackground.semiTransparent .headerButton,
-.skinHeader.headroom:not(.osdHeader, .noHomeButtonHeader):has(.pageTitle:empty)
-    .headerButton {
+.skinHeader.headroom:not(.osdHeader, .noHomeButtonHeader):has(.pageTitle:empty) .headerButton {
     text-shadow: 1px 1px 0 #00000080;
 }
 
 /* this keeps the header elements aligned when its height is modified */
 .headerTop {
-    -webkit-align-items: flex-end;
-    align-items: flex-end;
+    -webkit-align-items: center;
+    align-items: center;
+    /* this removes different padding set on different layouts in various media queries */
+    padding: 0;
+    height: var(--appBarHeight);
+}
+
+.osdHeader .headerTop {
+    max-height: var(--appBarHeight);
+}
+
+.layout-desktop .headerTop {
+    padding: 0 1em;
+}
+
+.layout-tv .headerTop {
+    padding: 0 0.5em;
 }
 
 /* this prevents the section tabs from hiding all the way up */
 .headroom--unpinned {
-    -webkit-transform: translateY(-3.7em);
-    transform: translateY(-3.7em);
+    -webkit-transform: translateY(calc(-1 * var(--appBarHeight) - var(--borderWidth)));
+    transform: translateY(calc(-1 * var(--appBarHeight) - var(--borderWidth)));
 }
 
-.noHomeButtonHeader .emby-tab-button[data-index="1"]:before {
-    content: "\e87d";
+.noHomeButtonHeader .emby-tab-button[data-index='1']:before {
+    content: '\e87d';
 }
 
-.noHomeButtonHeader .emby-tab-button[data-index="0"]:before {
-    content: "\e88a";
+.noHomeButtonHeader .emby-tab-button[data-index='0']:before {
+    content: '\e88a';
 }
 
 .noHomeButtonHeader .emby-tab-button:before {
-    font-family: "Material Icons Round";
+    font-family: 'Material Icons Round';
     padding-inline-end: 0.5ch;
     font-size: 1.2em;
-    font-variation-settings: "FILL" 0;
-}
-
-.headerTabs.sectionTabs {
-    margin: 0;
-    height: 6em;
+    font-variation-settings: 'FILL' 0;
 }
 
 .layout-tv .sectionTabs .emby-tabs.smoothScrollX {
@@ -3610,7 +3687,8 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child {
 .layout-tv .sectionTabs {
     /* this prevents the section tabs from being off-center in the music library
      after I set the overflow to visible to fix visual glitches */
-    width: 100%;
+    width: 70%;
+    margin-right: 2em;
 }
 
 .headerTabs.sectionTabs .emby-tab-button {
@@ -3639,38 +3717,120 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child {
 }
 
 @media (min-width: 75em) {
-    .sectionTabs:not(.layout-tv .sectionTabs) {
+    .sectionTabs {
         -webkit-align-items: center;
         align-items: center;
         -webkit-align-self: center;
         align-self: center;
         -webkit-justify-content: center;
         justify-content: center;
-        margin-top: -3em;
+        margin-top: calc(-1 * var(--appBarHeight));
         position: relative;
         width: auto;
     }
 
+    /* this reduces top page padding when section tabs are minimised */
     .libraryPage:not(.noSecondaryNavPage):not(.layout-tv .libraryPage) {
         padding-top: 6.8em !important;
     }
 }
 
 @media (max-width: 100em) {
+    /* this makes the font size consistent */
     .sectionTabs {
         font-size: 100%;
     }
 }
 
+/* this increased top page padding when section tabs are maximised */
 .libraryPage:not(.noSecondaryNavPage) {
     padding-top: 9.5em !important;
 }
 
+/* this limits top page padding when section tabs always on TVs */
+.layout-tv .libraryPage:not(.noSecondaryNavPage) {
+    padding-top: 6em !important;
+}
+
 .layout-tv .headerLeft {
     overflow: unset;
-    margin: 0.25em 0.5em;
+    margin: 0em 0.6em;
+}
+
+/* this allows switching between the header styles easily */
+#reactRoot > div:nth-of-type(3) {
+    container-name: skinHeader;
+    container-type: size;
+    height: var(--appBarHeight);
+}
+
+@container skinHeader (min-height: 4.9em) {
+    /* this is the alternative faded app bar */
+    .skinHeader-blurred:not(.osdHeader):not(.semiTransparent) {
+        backdrop-filter: none;
+        background-color: transparent;
+        border: none;
+        background: var(--headerBackground);
+        padding: 0;
+    }
+
+    .skinHeader-blurred:not(.osdHeader):not(.semiTransparent)::after {
+        content: var(--headerBlurLayerVisibility);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        backdrop-filter: var(--blurLargest);
+        -webkit-mask: var(--headerBlurMask);
+        mask: var(--headerBlurMask);
+        z-index: -1;
+    }
+
+    .layout-mobile .headerTop {
+        height: calc(var(--appBarHeight) - 1em);
+    }
+
+    .headerTabs.sectionTabs {
+        padding-bottom: 1.5em;
+    }
+
+    .layout-mobile .headerTabs.sectionTabs {
+        align-content: center;
+    }
+
+    .headroom--unpinned {
+        -webkit-transform: translateY(calc(-0.75 * var(--appBarHeight) - var(--borderWidth)));
+        transform: translateY(calc(-0.75 * var(--appBarHeight) - var(--borderWidth)));
+    }
 }
 
 .remoteControlContent {
     padding: 0 var(--sidePadding) !important;
+}
+
+/* .layout-tv *,
+.layout-tv *::before,
+.layout-tv *::after {
+    transition-duration: .1s;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none;
+    text-shadow: none;
+    filter: none !important;
+    -webkit-filter: none !important;
+} */
+
+/* .layout-tv .show-focus:not(.card):focus,
+.layout-tv .show-animation:not(.card):focus {
+    transform: none !important;
+} */
+
+/* .layout-tv .blurhash-canvas {
+    display: none !important;
+} */
+
+.layout-tv .show-focus:focus,
+.layout-tv .show-animation:focus {
+    transform: none !important;
 }
